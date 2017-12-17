@@ -35,24 +35,6 @@ void input(){
 		else fix[i]=0;
 	}
 }
-/*
-void solping(){
-	for(int i=0;i<16;i++){
-		if(awal[i]==0){
-			int tag=1;
-			for(int j=0;j<16;j++){
-				if(ma[i][j]==1){
-					if(awal[j]==tag){
-						tag++;j=0;
-					}
-				}
-			}
-			awal[i]=tag;
-		}
-	}	
-}
-*/
-
 
 void output(){
 	system("cls");
@@ -102,10 +84,6 @@ void solping(){
 		}
 	}	
 }
-
-
-
-
 
 int main(){
 	setcolor(240);
