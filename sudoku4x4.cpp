@@ -36,6 +36,8 @@ void input(){
 	}
 }
 
+diana
+
 
 void output(){
 	system("cls");
