@@ -30,11 +30,12 @@ void setcolor(unsigned short color){
 
 void input(){
 	for(int i=0;i<16;i++){
-		scanf("%d",&awal[i]);
-		if(awal[i]!=0) fix[i]=1;
-		else fix[i]=0;
+		scanf("%d",&awal[i]); //menginput 16 x
+		if(awal[i]!=0) fix[i]=1; //kalau input awal[] bukan 0, masuk ke fix[]
+		else fix[i]=0; // kalau input awal[] 0, fix [] = 0 
 	}
 }
+
 
 void output(){
 	system("cls");
@@ -57,33 +58,37 @@ void output(){
 
 void solping(){
 	for(int i=0;i<16;i++){
-		if(fix[i]==0){
-			int tag=awal[i]+1;
+		if(fix[i]==0){ //yang diubah adalah yang 0
+			int tag=awal[i]+1; //yang tadinya 0 ditambah 1 dimasukkin ke tag
 			for(int j=0;j<16;j++){
-				awal[i]=tag;
-				if(ma[i][j]==1){
-					if(awal[j]==tag){
+				awal[i]=tag; 
+				if(ma[i][j]==1){ //kalau hasil matrix adjacency 1 alias bertetangga
+					if(awal[j]==tag){ // jika awal sama dengan tag
 						output();
-						tag++;j=-1;
+						tag++;j=-1; //tag ditambah, j=-1 agar saat masuk loop diulang jadi 0
 					}
 				}
 			}
-			if(tag>4){
-				awal[i]=0;
-				while(1){
-					if(fix[i-1]==1) i=i-1;
+			if(tag>4){ //jika tag melebihi 4
+				awal[i]=0; // awal direset jadi 0
+				while(1){ //biar jalan terus
+					if(fix[i-1]==1) i=i-1; //mengecek kalau sebelumnya soal, jika iya mundur 1x
 					else break;
 				}
-				i=i-2;
+				i=i-2; // ini yg kedua kali buat yg fix, yang engga baru sekali
 				output();
 				continue;
 			}
 			
-			output();
-			awal[i]=tag;
+			output(); //ini buat yang <4
+			awal[i]=tag; //hasil akhirnya adalah tag
 		}
 	}	
 }
+
+
+
+
 
 int main(){
 	setcolor(240);
