@@ -21,12 +21,10 @@ int i,ma[16][16]={0,1,1,1,1,1,0,0,1,0,0,0,1,0,0,0,
 int awal[16];
 int fix[16];
 
-
 void setcolor(unsigned short color){
 	HANDLE hCon = GetStdHandle(STD_OUTPUT_HANDLE);
 	SetConsoleTextAttribute(hCon,color);
 }
-
 
 void input(){
 	for(int i=0;i<16;i++){
@@ -35,9 +33,6 @@ void input(){
 		else fix[i]=0; // kalau input awal[] 0, fix [] = 0 
 	}
 }
-
-diana
-
 
 void output(){
 	system("cls");
@@ -87,10 +82,6 @@ void solping(){
 		}
 	}	
 }
-
-
-
-
 
 int main(){
 	setcolor(240);
